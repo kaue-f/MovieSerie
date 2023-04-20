@@ -1,6 +1,6 @@
 @section('', ('Adicionar Filmes'))
 
-<form class="mx-auto mt-16 max-w-xl sm:mt-2 font-mono" action="" method="post">
+<form class="mx-auto mt-16 max-w-xl sm:mt-2 font-mono" action="{{route('dados.filme')}}" method="post">
     @csrf
 
         <h1 class="" style="margin-block: 1rem">Adicionar Filme</h1>
@@ -10,7 +10,7 @@
           <div>
             <label class="block text-sm font-semibold leading-6 text-gray-900">Titulo</label>
             <div class="mt-2.5">
-              <x-input type="text" placeholder="Titulo" name="f-titulo" id="f-titulo"/>
+              <x-input type="text" placeholder="Titulo" name="f_titulo" id="f_titulo"/>
             </div>
           </div>
 
@@ -18,7 +18,7 @@
           <div class="sm:col-span-2" style="margin-block: 0.8rem">
             <label class="block text-sm font-semibold leading-6 text-gray-900">Capa</label>
             <div class="mt-2.5">
-                <x-input name='f-capa' placeholder="URL da Imagem"/>
+                <x-input name='f_capa' placeholder="URL da Imagem"/>
             </div>
           </div>
 
@@ -27,7 +27,7 @@
             <label for="company" class="block text-sm font-semibold leading-6 text-gray-900">Gênero</label>
             <div class="mt-2.5">
                 <x-select
-                    name='f-genero'
+                    name='f_genero'
                     placeholder="Selecionar Gênero"
                     multiselect
                     :options="['Ação', 'Aventura', 'Comédia', 'Comédia romântica', 'Dança', 'Documentário', 'Drama', 'Faroeste', 'Fantasia', 'Ficção científica', 'Mistério', 'Musical', 'Romance', 'Terror']"
@@ -41,7 +41,7 @@
             <label for="email" class="block text-sm font-semibold leading-6 text-gray-900">Classificação</label>
             <div class="mt-2.5">
                 <x-select
-                    name='f-classificacao'
+                    name='f_classificacao'
                     placeholder="Selecionar Classificação"
                     :options="['L', '10', '12', '14', '16', '18']"
                     wire:model.defer="model"
@@ -53,7 +53,7 @@
           <div class="sm:col-span-2" style="margin-block: 0.8rem">
             <label for="message" class="block text-sm font-semibold leading-6 text-gray-900">Sinopse</label>
             <div class="mt-2.5">
-              <textarea name="f-sinopse" id="f-sinopse" rows="4" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+              <textarea name="f_sinopse" id="f_sinopse" rows="4" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
             </div>
           </div>
 
@@ -63,7 +63,7 @@
               <label class="block text-sm font-semibold leading-6 text-gray-900">Duração</label>
               <div class="mt-2.5">
                   <x-time-picker 
-                      name='f-duracao'
+                      name='f_duracao'
                       placeholder="Duração do Filme"
                       format="24"
                       interval="1"
@@ -78,7 +78,7 @@
               <label class="block text-sm font-semibold leading-6 text-gray-900">Lançamento</label>
               <div class="mt-2.5">
                   <x-datetime-picker
-                      name='f-lancamento'
+                      name='f_lancamento'
                       without-time
                       display-format="YYYY-MM-DD"
                       placeholder="Data de Lançamento"
@@ -90,17 +90,18 @@
             <!-- Assistiu -->
             <div>
               <label class="block text-sm font-semibold leading-6 text-gray-900">Já Assistiu ?</label>
-              <div name='f-assistiu' class="mt-2.5">
-                  <x-radio name="s-sim" id="left-label" label="Sim" wire:model.defer="model" />
-                  <x-radio name="s-nao" id="right-label" label="Não" wire:model.defer="model" />
+              <div class="mt-2.5">
+                  <x-radio name='f_assistiu' id="left-label" value="Sim" label="Sim" wire:model.defer="model"/>
+                  <x-radio name='f_assistiu' id="right-label" value="Não" label="Não" wire:model.defer="model" />
               </div>
             </div>
             
             <!-- Avaliacao -->
             <div>
               <label class="block text-sm font-semibold leading-6 text-gray-900">Avaliação</label>
+              <div class="mt-2.5">
               <x-select
-                  name='f-nota'
+                  name='f_nota'
                   placeholder="Avalie"
                   :options="[
                       ['name' => '⭐',  'id' => 1, 'description' => 'Péssimo'],
@@ -113,7 +114,6 @@
                   option-value="id"
                   wire:model.defer="model"
               />
-              <div class="mt-2.5">
               </div>
             </div>
           </div>

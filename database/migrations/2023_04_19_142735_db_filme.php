@@ -22,6 +22,7 @@ return new class extends Migration
             $table->text('sinopse');
             $table->boolean('finalizou');
             $table->string('nota');
+            $table->timestamps();
         });
     }
 

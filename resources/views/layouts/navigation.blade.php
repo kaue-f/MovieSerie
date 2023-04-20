@@ -29,9 +29,27 @@
     </a>
 </div>
 
+
 @can('view_dashboard')
     <x-nav.link route="dashboard" icon="fas fa-home">{{ __('Dashboard') }}</x-nav.link>
 @endcan
+
+@if (can('view_list-filme') || can('view_list-serie') || can('view_list-anime'))
+
+    <x-nav.group label="Catálogo" route="catalogo" icon="fa-solid fa-film" beat>
+        @can('view_list-filme')
+            <x-nav.group-item route="catalogo.filmes" icon="far fa-circle">Filmes</x-nav.group-item>
+        @endcan
+
+        @can('view_list-serie')
+            <x-nav.group-item route="catalogo.series" icon="far fa-circle">Séries</x-nav.group-item>
+        @endcan
+    
+        @can('view_list-anime')
+            <x-nav.group-item route="catalogo.animes" icon="far fa-circle">Animes</x-nav.group-item>
+        @endcan
+    </x-nav.group>
+@endif
 
 @if (can('view_filme') || can('view_serie') || can('view_anime'))
     <x-nav.group label="Adicionar" route="adicionar" icon="fas fa-plus">
@@ -39,15 +57,16 @@
             <x-nav.group-item route="adicionar.filme" icon="far fa-circle">Filme</x-nav.group-item>
         @endcan
         
-        @can('')
+        @can('view_serie')
             <x-nav.group-item route="adicionar.serie" icon="far fa-circle">Série</x-nav.group-item>
         @endcan
 
-        @can('')
+        @can('view_anime')
             <x-nav.group-item route="adicionar.anime" icon="far fa-circle">Anime</x-nav.group-item>            
         @endcan
     </x-nav.group>
 @endif
+
 
 @if(can('view_system_settings') || can('view_roles') || can('view_audit_trails') || can('view_sent_emails'))
     <x-nav.group label="Settings" route="admin.settings" icon="fas fa-cogs">

@@ -22,8 +22,9 @@ return new class extends Migration
             $table->dateTime('duracaoEpisodio');
             $table->string('classificacao');
             $table->text('sinopse');
-            $table->boolean('finalizou');
+            $table->string('finalizou');
             $table->string('nota');
+            $table->timestamps();
         });
     }
 

@@ -1,6 +1,6 @@
 @section('', ('Adicionar Série'))
 
-<form class="mx-auto mt-16 max-w-xl sm:mt-2 font-mono" action="" method="post">
+<form class="mx-auto mt-16 max-w-xl sm:mt-2 font-mono" action="{{route('dados.serie')}}" method="post">
     @csrf
 
     <h1 class="" style="margin-block: 1rem">Adicionar Série</h1>
@@ -10,7 +10,7 @@
           <div>
             <label class="block text-sm font-semibold leading-6 text-gray-900">Titulo</label>
             <div class="mt-2.5">
-              <x-input type="text" placeholder="Titulo" name="s-titulo" id="s-titulo"/>
+              <x-input type="text" placeholder="Titulo" name="s_titulo" id="s_titulo"/>
             </div>
           </div>
 
@@ -19,7 +19,7 @@
           <div>
             <label class="block text-sm font-semibold leading-6 text-gray-900">Temporada</label>
             <div class="mt-2.5">
-                <x-input type="text" placeholder="Temporada" name="s-temporada" id="s-temporada"/>
+                <x-input type="number" placeholder="Temporada" name="s_temporada" id="s_temporada" hint="Só números"/>
             </div>
           </div>
           
@@ -27,7 +27,7 @@
           <div>
             <label class="block text-sm font-semibold leading-6 text-gray-900">Episódio</label>
             <div class="mt-2.5">
-                <x-input type="text" placeholder="Quantidade de Episódio" name="s-episodio" id="s-episodio"/>
+                <x-input type="number" placeholder="Quantidade de Episódio" name="s_episodio" id="s_episodio" hint="Só números"/>
             </div>
           </div>
          </div>
@@ -35,16 +35,16 @@
           <div class="sm:col-span-2" style="margin-block: 0.8rem">
             <label class="block text-sm font-semibold leading-6 text-gray-900">Capa</label>
             <div class="mt-2.5">
-                <x-input name='s-capa' placeholder="URL da Imagem"/>
+                <x-input name='s_capa' placeholder="URL da Imagem"/>
             </div>
           </div>
 
           <!-- Genero -->
           <div class="sm:col-span-2" style="margin-block: 0.8rem">
-            <label for="company" class="block text-sm font-semibold leading-6 text-gray-900">Gênero</label>
+            <label class="block text-sm font-semibold leading-6 text-gray-900">Gênero</label>
             <div class="mt-2.5">
                 <x-select
-                    name='s-genero'
+                    name='s_genero'
                     placeholder="Selecionar Gênero"
                     multiselect
                     :options="['Ação', 'Aventura', 'Comédia', 'Comédia romântica', 'Dança', 'Documentário', 'Drama', 'Faroeste', 'Fantasia', 'Ficção científica', 'Mistério', 'Musical', 'Romance', 'Terror']"
@@ -55,10 +55,10 @@
 
           <!-- Classificacao -->
           <div class="sm:col-span-2" style="margin-block: 0.8rem">
-            <label for="email" class="block text-sm font-semibold leading-6 text-gray-900">Classificação</label>
+            <label class="block text-sm font-semibold leading-6 text-gray-900">Classificação</label>
             <div class="mt-2.5">
                 <x-select
-                    name='s-classificacao'
+                    name='s_classificacao'
                     placeholder="Selecionar Classificação"
                     :options="['L', '10', '12', '14', '16', '18']"
                     wire:model.defer="model"
@@ -68,9 +68,9 @@
 
           <!-- Sinopse -->
           <div class="sm:col-span-2" style="margin-block: 0.8rem">
-            <label for="message" class="block text-sm font-semibold leading-6 text-gray-900">Sinopse</label>
+            <label class="block text-sm font-semibold leading-6 text-gray-900">Sinopse</label>
             <div class="mt-2.5">
-              <textarea name="s-sinopse" id="s-sinopse" rows="4" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+              <textarea name="s_sinopse" id="s_sinopse" rows="4" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
             </div>
           </div>
 
@@ -81,7 +81,7 @@
             <label class="block text-sm font-semibold leading-6 text-gray-900">Duração</label>
             <div class="mt-2.5">
                 <x-time-picker 
-                    name='s-duracao'
+                    name='s_duracao'
                     placeholder="Duração do Episódio"
                     format="24"
                     interval="1"
@@ -96,7 +96,7 @@
             <label class="block text-sm font-semibold leading-6 text-gray-900">Lançamento</label>
             <div class="mt-2.5">
                 <x-datetime-picker
-                    name='s-lancamento'
+                    name='s_lancamento'
                     without-time
                     display-format="YYYY-MM-DD"
                     placeholder="Data de Lançamento"
@@ -108,30 +108,34 @@
           <!-- Assistiu -->
           <div>
             <label class="block text-sm font-semibold leading-6 text-gray-900">Já Assistiu ?</label>
-            <div name='s-assistiu' class="mt-2.5">
-                <x-radio name="s-sim" id="left-label" label="Sim" wire:model.defer="model" />
-                <x-radio name="s-nao" id="right-label" label="Não" wire:model.defer="model" />
+            <div class="mt-2.5">
+              <x-select
+                name='s_assistiu'
+                placeholder="Selecionar Classificação"
+                :options="['Sim', 'Não', 'Assistindo']"
+                wire:model.defer="model"
+              />
             </div>
           </div>
           
           <!-- Avaliacao -->
           <div>
             <label class="block text-sm font-semibold leading-6 text-gray-900">Avaliação</label>
+            <div class="mt-2.5">
             <x-select
-                name='s-nota'
+                name='s_nota'
                 placeholder="Avalie"
                 :options="[
-                    ['name' => '⭐',  'id' => 1, 'description' => 'Péssimo'],
-                    ['name' => '⭐⭐', 'id' => 2, 'description' => 'Ruim'],
-                    ['name' => '⭐⭐⭐',   'id' => 3, 'description' => 'Regular'],
-                    ['name' => '⭐⭐⭐⭐',    'id' => 4, 'description' => 'Bom'],
-                    ['name' => '⭐⭐⭐⭐⭐',    'id' => 4, 'description' => 'Excelente'],
+                    ['name' => '⭐',  'id' => '⭐', 'description' => 'Péssimo'],
+                    ['name' => '⭐⭐', 'id' => '⭐⭐', 'description' => 'Ruim'],
+                    ['name' => '⭐⭐⭐',   'id' => '⭐⭐⭐', 'description' => 'Regular'],
+                    ['name' => '⭐⭐⭐⭐',    'id' => '⭐⭐⭐⭐', 'description' => 'Bom'],
+                    ['name' => '⭐⭐⭐⭐⭐',    'id' => '⭐⭐⭐⭐⭐', 'description' => 'Excelente'],
                 ]"
                 option-label="name"
                 option-value="id"
                 wire:model.defer="model"
             />
-            <div class="mt-2.5">
             </div>
           </div>
         </div>
