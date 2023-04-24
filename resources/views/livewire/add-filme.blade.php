@@ -104,11 +104,11 @@
                   name='f_nota'
                   placeholder="Avalie"
                   :options="[
-                      ['name' => '⭐',  'id' => 1, 'description' => 'Péssimo'],
-                      ['name' => '⭐⭐', 'id' => 2, 'description' => 'Ruim'],
-                      ['name' => '⭐⭐⭐',   'id' => 3, 'description' => 'Regular'],
-                      ['name' => '⭐⭐⭐⭐',    'id' => 4, 'description' => 'Bom'],
-                      ['name' => '⭐⭐⭐⭐⭐',    'id' => 4, 'description' => 'Excelente'],
+                    ['name' => '⭐',  'id' => '⭐', 'description' => 'Péssimo'],
+                    ['name' => '⭐⭐', 'id' => '⭐⭐', 'description' => 'Ruim'],
+                    ['name' => '⭐⭐⭐',   'id' => '⭐⭐⭐', 'description' => 'Regular'],
+                    ['name' => '⭐⭐⭐⭐',    'id' => '⭐⭐⭐⭐', 'description' => 'Bom'],
+                    ['name' => '⭐⭐⭐⭐⭐',    'id' => '⭐⭐⭐⭐⭐', 'description' => 'Excelente'],
                   ]"
                   option-label="name"
                   option-value="id"

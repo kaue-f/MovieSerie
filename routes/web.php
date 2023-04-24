@@ -21,6 +21,9 @@ use App\Http\Livewire\Admin\Users\Users;
 use App\Http\Livewire\ListAnime;
 use App\Http\Livewire\ListFilme;
 use App\Http\Livewire\ListSerie;
+use App\Http\Livewire\ViewAnime;
+use App\Http\Livewire\ViewFilme;
+use App\Http\Livewire\ViewSerie;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -55,6 +58,10 @@ Route::prefix(config('admintw.prefix'))->middleware(['auth', 'verified', 'active
         Route::get('anime', AddAnime::class)->name('adicionar.anime');
         Route::post('/dados-anime', [DadosAnime::class, 'dadosAnime'])->name('dados.anime');
     });
+
+    Route::get('catalogo/series/viewserie/{id?}',[ViewSerie::class, 'viewserie'])->name('view.serie');
+    Route::get('catalogo/filmes/viewfilme/{id?}',[ViewFilme::class, 'viewfilme'])->name('view.filme');
+    Route::get('catalogo/animes/viewanime/{id?}',[ViewAnime::class, 'viewanime'])->name('view.anime');
 
 
     Route::get('2fa', [TwoFaController::class, 'index'])->name('2fa');

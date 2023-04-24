@@ -3,7 +3,7 @@
 
     <div class="font-mono container mx-auto px-6 md:px-12 xl:px-32">
         <div class="mb-20 text-center">
-            <h2 class="mb-4 text-center text-2xl text-gray-900 font-bold md:text-4xl">Tailus blocks leadership</h2>
+            <h2 class="mb-4 text-center text-2xl text-gray-900 font-bold md:text-4xl"></h2>
         </div>
         <div class="grid gap-12 items-center md:grid-cols-3">
 

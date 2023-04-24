@@ -1,4 +1,4 @@
-@section('', ('Adicionar Série'))
+@section('title', ('Adicionar Série'))
 
 <form class="mx-auto mt-16 max-w-xl sm:mt-2 font-mono" action="{{route('dados.serie')}}" method="post">
     @csrf

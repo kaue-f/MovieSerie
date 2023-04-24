@@ -34,7 +34,7 @@ class DadosSerie extends Controller
     
             $dadosSerie->lancamento = $request->s_lancamento;
     
-            $dadosSerie->finalizou = ($request->s_assistiu == "Sim");
+            $dadosSerie->finalizou = $request->s_assistiu;
     
             $dadosSerie->nota = $request->s_nota;
     

@@ -1,4 +1,4 @@
-@section('', ('Adicionar Anime'))
+@section('title', ('Adicionar Anime'))
 
 <form class="mx-auto mt-16 max-w-xl sm:mt-2 font-mono" action="{{route('dados.anime')}}" method="post">
     @csrf

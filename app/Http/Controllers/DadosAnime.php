@@ -34,7 +34,7 @@ class DadosAnime extends Controller
     
             $dadosAnime->lancamento = $request->a_lancamento;
     
-            $dadosAnime->finalizou = ($request->a_assistiu == "Sim");
+            $dadosAnime->finalizou = $request->a_assistiu;
     
             $dadosAnime->nota = $request->a_nota;
     

@@ -11,6 +11,6 @@ class ListAnime extends Component
     {   
         $animes = anime::where('id_user', auth()->user()->id)->orderBy('titulo', 'ASC')->get();
 
-        return view('livewire.list-anime');
+        return view('livewire.list-anime', compact('animes'));
     }
 }

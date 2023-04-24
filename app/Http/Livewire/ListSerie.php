@@ -11,6 +11,6 @@ class ListSerie extends Component
     {   
         $series = serie::where('id_user', auth()->user()->id)->orderBy('titulo', 'ASC')->get();
 
-        return view('livewire.list-serie');
+        return view('livewire.list-serie', compact('series'));
     }
 }
