@@ -32,7 +32,7 @@
                     <p class="mb-4 font-light text-gray-800 dark:text-gray-600">Sinopse</p>
                     <p style="margin-top: -2rem"><a href="{{route('view.serie', $serie->id)}}"><i class="fa-solid fa-bars"></i></a></p>
 
-                    <ul class="flex space-x-8 sm:mt-0">
+                    <ul class="flex space-x-12 sm:mt-0">
                         <li><!-- Temporada -->
                             <p class="text-gray-800 dark:text-gray-600">Temporada: <span class="text-lg font-black">
                                 {{$serie->temporada}}
@@ -71,5 +71,3 @@
         @endforeach
         </div>
 </div>
-=======
->>>>>>> 179b59f28ad3cbb28cd0e3e4b667f95a4dd9792e

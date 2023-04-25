@@ -77,6 +77,10 @@
                                     {{$viewanime->nota}}
                             </li>
                         </ul>
+
+                        <div class="mt-6">
+                            <p>Edite <a href=""><i class="fa-solid fa-pen-to-square"></i></a></p>
+                        </div>
                     </div>
                 </div>
 

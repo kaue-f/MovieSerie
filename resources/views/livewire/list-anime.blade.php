@@ -32,13 +32,13 @@
                     <p class="mb-4 font-light text-gray-800 dark:text-gray-600">Sinopse</p>
                     <p style="margin-top: -2rem"><a href="{{route('view.anime', $anime->id)}}"><i class="fa-solid fa-bars"></i></a></p>
 
-                    <ul class="flex space-x-8 sm:mt-0">
-                        <li><!-- Classificação -->
+                    <ul class="flex space-x-12 sm:mt-0">
+                        <li><!-- Temporada -->
                             <p class="text-gray-800 dark:text-gray-600">Temporada: <span class="text-lg font-black">
                                 {{$anime->temporada}}
                             </span></p>
                         </li>
-                        <li><!-- Temporada -->
+                        <li><!-- Episodio -->
                             <p class="text-gray-800 dark:text-gray-600">Episódio: <span class="text-lg font-black">
                                 {{$anime->episodio}}
                             </span></p>

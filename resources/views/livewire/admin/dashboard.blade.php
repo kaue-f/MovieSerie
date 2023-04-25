@@ -5,35 +5,35 @@
         <div class="mb-20 text-center">
             <h2 class="mb-4 text-center text-2xl text-gray-900 font-bold md:text-4xl"></h2>
         </div>
-        <div class="grid gap-12 items-center md:grid-cols-3">
+        <div class="grid space-x-4 gap-12 items-center md:grid-cols-3">
 
             <div class="hover:scale-125 space-y-4 text-center">
                 <a href="{{route('catalogo.series')}}">
                     <img class="w-64 h-64 mx-auto object-cover rounded-xl md:w-72 md:h-96 lg:w-96 lg:h-[36rem]" 
-                        src="" width="640" height="805">
+                        src="{{$capa->serie}}" width="640" height="805">
                 </a>
                 <div>
-                    <h4 class="text-4xl">Séries</h4>
+                    <h4 class="text-4xl text-black dark:text-white font-bold">Séries</h4>
                 </div>
             </div>
 
             <div class="hover:scale-125 space-y-4 text-center">
                 <a href="{{route('catalogo.filmes')}}">
                     <img class=" w-64 h-64 mx-auto object-cover rounded-xl md:w-72 md:h-96 lg:w-96 lg:h-[36rem]" 
-                        src="" width="1000" height="667">
+                        src="{{$capa->filme}}" width="1000" height="667">
                 </a>
                 <div>
-                    <h4 class="text-4xl">Filmes</h4>
+                    <h4 class="text-4xl text-black dark:text-white font-bold">Filmes</h4>
                 </div>
             </div>
 
             <div class="hover:scale-125 space-y-4 text-center">
                 <a href="{{route('catalogo.animes')}}">
                     <img class="w-64 h-64 mx-auto object-cover rounded-xl md:w-72 md:h-96 lg:w-96 lg:h-[36rem]" 
-                        src="" width="1000" height="667">
+                        src="{{$capa->anime}}" width="1000" height="667">
                 </a>
                 <div>
-                    <h4 class="text-4xl">Animes</h4>
+                    <h4 class="text-4xl text-black dark:text-white font-bold">Animes</h4>
                 </div>
 
             </div>

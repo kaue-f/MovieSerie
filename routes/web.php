@@ -18,10 +18,14 @@ use App\Http\Livewire\Admin\Settings\Settings;
 use App\Http\Livewire\Admin\Users\EditUser;
 use App\Http\Livewire\Admin\Users\ShowUser;
 use App\Http\Livewire\Admin\Users\Users;
+use App\Http\Livewire\EditFilme;
 use App\Http\Livewire\ListAnime;
 use App\Http\Livewire\ListFilme;
 use App\Http\Livewire\ListSerie;
 use App\Http\Livewire\ViewAnime;
+use App\Http\Livewire\ViewEditA;
+use App\Http\Livewire\ViewEditF;
+use App\Http\Livewire\ViewEditS;
 use App\Http\Livewire\ViewFilme;
 use App\Http\Livewire\ViewSerie;
 use Illuminate\Support\Facades\Route;
@@ -42,14 +46,14 @@ Route::get('/', WelcomeController::class);
 Route::prefix(config('admintw.prefix'))->middleware(['auth', 'verified', 'activeUser', 'IpCheckMiddleware'])->group(function () {
     Route::get('/', Dashboard::class)->name('dashboard');
 
-
+    //Rota de catalogo
     Route::prefix('catalogo')->group(function () {
         Route::get('filmes', ListFilme::class)->name('catalogo.filmes');
         Route::get('series', ListSerie::class)->name('catalogo.series');
         Route::get('animes', ListAnime::class)->name('catalogo.animes');
     });
-        
 
+    //Rota de adicionar
     Route::prefix('adicionar')->group(function () {
         Route::get('filme', AddFilme::class)->name('adicionar.filme');
         Route::post('/dados-filme', [Dados::class, 'dadosFilme'])->name('dados.filme');
@@ -59,10 +63,20 @@ Route::prefix(config('admintw.prefix'))->middleware(['auth', 'verified', 'active
         Route::post('/dados-anime', [DadosAnime::class, 'dadosAnime'])->name('dados.anime');
     });
 
+    //Rota de visualizar
     Route::get('catalogo/series/viewserie/{id?}',[ViewSerie::class, 'viewserie'])->name('view.serie');
     Route::get('catalogo/filmes/viewfilme/{id?}',[ViewFilme::class, 'viewfilme'])->name('view.filme');
     Route::get('catalogo/animes/viewanime/{id?}',[ViewAnime::class, 'viewanime'])->name('view.anime');
 
+    //Rota de edit
+    Route::prefix('editar')->group(function () {
+        Route::get('filme', ViewEditF::class)->name('view.edit.filme');
+        Route::get('edit-filme/{id}', [EditFilme::class, 'editFilme'])->name('edit.filme');
+        Route::post('update-filme', [EditFilme::class, 'updateFilme'])->name('update.filme');
+        Route::get('serie', ViewEditS::class)->name('view.edit.serie');
+
+        Route::get('anime', ViewEditA::class)->name('view.edit.anime');
+    });
 
     Route::get('2fa', [TwoFaController::class, 'index'])->name('2fa');
     Route::post('2fa', [TwoFaController::class, 'update'])->name('2fa.update');

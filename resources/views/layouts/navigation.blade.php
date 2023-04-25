@@ -67,6 +67,22 @@
     </x-nav.group>
 @endif
 
+@if (can('edit_filme') || can('edit_serie') || can('edit_anime'))
+    <x-nav.group label="Editar" route='editar' icon="fa-solid fa-pen-to-square">
+        @can('edit_filme')
+            <x-nav.group-item route="view.edit.filme" icon="far fa-circle">Filmes</x-nav.group-item>    
+        @endcan
+
+        @can('edit_serie')
+            <x-nav.group-item route="view.edit.serie" icon="far fa-circle">Séries</x-nav.group-item>    
+        @endcan
+
+        @can('edit_anime')
+            <x-nav.group-item route="view.edit.anime" icon="far fa-circle">Animes</x-nav.group-item>    
+        @endcan
+    </x-nav.group>
+@endif
+
 
 @if(can('view_system_settings') || can('view_roles') || can('view_audit_trails') || can('view_sent_emails'))
     <x-nav.group label="Settings" route="admin.settings" icon="fas fa-cogs">
