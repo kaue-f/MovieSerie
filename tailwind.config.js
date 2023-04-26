@@ -7,6 +7,7 @@ module.exports = {
     ],
     plugins: [
         require('@tailwindcss/forms'),
+        require("daisyui"),
       ],
     content: [
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',

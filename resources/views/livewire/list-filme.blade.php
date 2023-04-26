@@ -8,7 +8,7 @@
          @foreach ($filmes as $filme )
             <div class="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">   
                 <!-- Capa -->
-                    <img class="h-[18rem] w-[18rem] " src="{{$filme->capa}}">
+                    <img class="h-[18rem] w-[14rem] " src="{{$filme->capa}}">
                 <div class="p-5">
 
                     <!-- Titulo -->
@@ -34,9 +34,9 @@
                     </p>
                     <p style="margin-top: -2rem"><a href="{{route('view.filme', $filme->id)}}"><i class="fa-solid fa-bars"></i></a></p>
 
-                    <ul class="flex space-x-4 sm:mt-0">
+                    <ul class="flex space-x-8 sm:mt-0">
                         <li><!-- lancamento -->
-                            <p class="text-gray-800 dark:text-gray-600">Lançamento <span class="text-lg text-black	">
+                            <p class="text-gray-800 dark:text-gray-600">Lançamento <br><span class="text-lg text-black	">
                             @php
                                 $lanca = new DateTime($filme->lancamento);
                              @endphp
@@ -45,7 +45,7 @@
                         </li>
 
                         <li><!-- Assisitu -->
-                            <p class="text-gray-800 dark:text-gray-600">Assistiu <span class="text-lg text-black">
+                            <p class="text-gray-800 dark:text-gray-600">Assistiu <br><span class="text-lg text-black">
                             @php
                                 $finali = $filme->finalizou;
                                 if ($finali == 1) {
@@ -60,7 +60,7 @@
                         </li>
 
                         <li><!-- nota -->
-                            <p class="text-gray-800 dark:text-gray-600">Nota <span>
+                            <p class="text-gray-800 dark:text-gray-600">Nota <br><span>
                                 {{$filme->nota}}
                         </li>
                     </ul>

@@ -15,24 +15,24 @@ class Dados extends Controller
 
         $dadosFilme = new filme();
 
-            $dadosFilme->titulo = $request->f_titulo;
+            $dadosFilme->titulo = $request->titulo;
 
-            $dadosFilme->capa = $request->f_capa;
+            $dadosFilme->capa = $request->capa;
 
-            $dadosFilme->genero = $request->f_genero;
+            $dadosFilme->genero = $request->genero;
 
-            $dadosFilme->classificacao = $request->f_classificacao;
+            $dadosFilme->classificacao = $request->classificacao;
 
-            $dadosFilme->sinopse = $request->f_sinopse;
+            $dadosFilme->sinopse = $request->sinopse;
             
-            $duracaoF = new DateTime("01-01-2023" .$request->f_duracao);
-            $dadosFilme->duracao = $duracaoF;
+            $duracao = new DateTime("01-01-2023" .$request->duracao);
+            $dadosFilme->duracao = $duracao;
 
-            $dadosFilme->lancamento = $request->f_lancamento;
+            $dadosFilme->lancamento = $request->lancamento;
 
-            $dadosFilme->finalizou = ($request->f_assistiu == "Sim");
+            $dadosFilme->finalizou = $request->finalizou;
 
-            $dadosFilme->nota = $request->f_nota;
+            $dadosFilme->nota = $request->nota;
 
             $dadosFilme->id_user = auth()->user()->id;
             $dadosFilme->save();

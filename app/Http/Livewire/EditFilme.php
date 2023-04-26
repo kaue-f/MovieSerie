@@ -20,19 +20,17 @@ class EditFilme extends Component
         return view('livewire.edit-filme', compact('editfilme'));
     }
 
-    public function updateFilme(Request $request, filme $editfilme){
+    public function updateFilme(Request $request, filme $editfilme, string $id){
 
+        if (!$editfilme = $editfilme->find($id)){
+            return back();
+        }
 
-        //$editfilme->fill($request->all())->save();
-
-//        $editfilme = new filme();
-        
-        filme::where('id',)
-
-        $editfilme->fill($request->all())->save();
-
+        $editfilme->update($request->only([
+            'capa', 'genero', 'classificacao',
+            'finalizou', 'nota'
+        ]));
 
         return redirect()->route('catalogo.filmes');
-        
     }
 }

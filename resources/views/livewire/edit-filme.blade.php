@@ -22,7 +22,7 @@
           <div>
             <label class="block text-sm font-semibold leading-6 text-gray-900">Titulo</label>
             <div class="mt-2.5">
-              <x-input type="text" placeholder="Titulo" name="f_titulo" id="f_titulo" value="{{$editfilme->titulo}}" disabled/>
+              <x-input type="text" placeholder="Titulo" name="titulo" id="titulo" value="{{$editfilme->titulo}}" disabled/>
             </div>
           </div>
 
@@ -30,7 +30,7 @@
           <div class="sm:col-span-2" style="margin-block: 0.8rem">
             <label class="block text-sm font-semibold leading-6 text-gray-900">Capa</label>
             <div class="mt-2.5">
-                <x-input name='f_capa' placeholder="URL da Imagem"/>
+                <x-input name='capa' value='{{$editfilme->capa}}' placeholder="URL da Imagem"/>
             </div>
           </div>
 
@@ -39,11 +39,12 @@
             <label for="company" class="block text-sm font-semibold leading-6 text-gray-900">Gênero</label>
             <div class="mt-2.5">
                 <x-select
-                    name='f_genero'
+                    name='genero'
                     placeholder="Selecionar Gênero"
                     multiselect
                     :options="['Ação', 'Aventura', 'Comédia', 'Comédia romântica', 'Dança', 'Documentário', 'Drama', 'Faroeste', 'Fantasia', 'Ficção científica', 'Mistério', 'Musical', 'Romance', 'Terror']"
-                />
+                    value="{{$editfilme->genero}}"
+                    />
             </div>
           </div>
 
@@ -52,9 +53,10 @@
             <label for="email" class="block text-sm font-semibold leading-6 text-gray-900">Classificação</label>
             <div class="mt-2.5">
                 <x-select
-                    name='f_classificacao'
+                    name='classificacao'
                     placeholder="Selecionar Classificação"
                     :options="['L', '10', '12', '14', '16', '18']"
+                    value="{{$editfilme->classificacao}}"
                 />
             </div>
           </div>
@@ -65,8 +67,8 @@
             <div>
                 <label class="block text-sm font-semibold leading-6 text-gray-900">Já Assistiu ?</label>
                 <div class="mt-2.5">
-                    <x-radio name='f_assistiu' id="left-label" value="Sim" label="Sim" wire:model.defer="model"/>
-                    <x-radio name='f_assistiu' id="right-label" value="Não" label="Não" wire:model.defer="model" />
+                    <x-radio name='finalizou' id="left-label" value="1" label="Sim" wire:model.defer="model"/>
+                    <x-radio name='finalizou' id="right-label" value="0" label="Não" wire:model.defer="model" />
                 </div>
               </div>
             
@@ -75,7 +77,7 @@
                 <label class="block text-sm font-semibold leading-6 text-gray-900">Avaliação</label>
                 <div class="mt-2.5">
                 <x-select
-                    name='f_nota'
+                    name='nota'
                     placeholder="Avalie"
                     :options="[
                       ['name' => '⭐',  'id' => '⭐', 'description' => 'Péssimo'],
@@ -86,6 +88,7 @@
                     ]"
                     option-label="name"
                     option-value="id"
+                    value="{{$editfilme->nota}}"
                 />
                 </div>
               </div>

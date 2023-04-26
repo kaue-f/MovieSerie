@@ -72,7 +72,8 @@ Route::prefix(config('admintw.prefix'))->middleware(['auth', 'verified', 'active
     Route::prefix('editar')->group(function () {
         Route::get('filme', ViewEditF::class)->name('view.edit.filme');
         Route::get('edit-filme/{id}', [EditFilme::class, 'editFilme'])->name('edit.filme');
-        Route::post('update-filme', [EditFilme::class, 'updateFilme'])->name('update.filme');
+        Route::post('update-filme/{id}', [EditFilme::class, 'updateFilme'])->name('update.filme');
+        Route::delete('delete/{id}', [ViewEditF::class, 'deleteFilme'])->name('delete.filme');
         Route::get('serie', ViewEditS::class)->name('view.edit.serie');
 
         Route::get('anime', ViewEditA::class)->name('view.edit.anime');

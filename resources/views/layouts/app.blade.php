@@ -31,7 +31,7 @@
                     @include('layouts.navigation')
                 </div>
             @endauth
-
+                <!-- Corpo central -->
             <div id="main" class="w-full bg-gray-100 dark:bg-gray-600">
 
                 @auth

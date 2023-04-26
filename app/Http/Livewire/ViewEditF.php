@@ -13,4 +13,14 @@ class ViewEditF extends Component
 
         return view('livewire.view-edit-f', compact('viewEfilme'));
     }
+
+    public function deleteFilme(string | int $id){
+
+        if (!$viewEfilme = filme::find($id)){
+            return back();
+        }
+        $viewEfilme->delete();
+
+        return redirect()->route('view.edit.filme');
+    }
 }

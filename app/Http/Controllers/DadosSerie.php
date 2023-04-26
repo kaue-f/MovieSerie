@@ -15,28 +15,28 @@ class DadosSerie extends Controller
 
         $dadosSerie = new serie();
     
-            $dadosSerie->titulo = $request->s_titulo;
+            $dadosSerie->titulo = $request->titulo;
     
-            $dadosSerie->temporada = $request->s_temporada;
+            $dadosSerie->temporada = $request->temporada;
     
-            $dadosSerie->episodio = $request->s_episodio;
+            $dadosSerie->episodio = $request->episodio;
     
-            $dadosSerie->capa = $request->s_capa;
+            $dadosSerie->capa = $request->capa;
     
-            $dadosSerie->genero = $request->s_genero;
+            $dadosSerie->genero = $request->genero;
     
-            $dadosSerie->classificacao = $request->s_classificacao;
+            $dadosSerie->classificacao = $request->classificacao;
     
-            $dadosSerie->sinopse = $request->s_sinopse;
+            $dadosSerie->sinopse = $request->sinopse;
                 
-            $duracaoS = new DateTime("01-01-2023" .$request->s_duracao);
-            $dadosSerie->duracaoEpisodio = $duracaoS;
+            $duracao = new DateTime("01-01-2023" .$request->duracao);
+            $dadosSerie->duracaoEpisodio = $duracao;
     
-            $dadosSerie->lancamento = $request->s_lancamento;
+            $dadosSerie->lancamento = $request->lancamento;
     
-            $dadosSerie->finalizou = $request->s_assistiu;
+            $dadosSerie->finalizou = $request->assistiu;
     
-            $dadosSerie->nota = $request->s_nota;
+            $dadosSerie->nota = $request->nota;
     
             $dadosSerie->id_user = auth()->user()->id;
             $dadosSerie->save();

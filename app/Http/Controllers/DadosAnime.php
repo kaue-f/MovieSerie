@@ -15,28 +15,28 @@ class DadosAnime extends Controller
 
         $dadosAnime = new anime();
     
-            $dadosAnime->titulo = $request->a_titulo;
+            $dadosAnime->titulo = $request->titulo;
     
-            $dadosAnime->temporada = $request->a_temporada;
+            $dadosAnime->temporada = $request->temporada;
     
-            $dadosAnime->episodio = $request->a_episodio;
+            $dadosAnime->episodio = $request->episodio;
     
-            $dadosAnime->capa = $request->a_capa;
+            $dadosAnime->capa = $request->capa;
     
-            $dadosAnime->genero = $request->a_genero;
+            $dadosAnime->genero = $request->genero;
     
-            $dadosAnime->classificacao = $request->a_classificacao;
+            $dadosAnime->classificacao = $request->classificacao;
     
-            $dadosAnime->sinopse = $request->a_sinopse;
+            $dadosAnime->sinopse = $request->sinopse;
                 
-            $duracaoA = new DateTime("01-01-2023" .$request->a_duracao);
-            $dadosAnime->duracaoEpisodio     = $duracaoA;
+            $duracao = new DateTime("01-01-2023" .$request->duracao);
+            $dadosAnime->duracaoEpisodio = $duracao;
     
-            $dadosAnime->lancamento = $request->a_lancamento;
+            $dadosAnime->lancamento = $request->lancamento;
     
-            $dadosAnime->finalizou = $request->a_assistiu;
+            $dadosAnime->finalizou = $request->assistiu;
     
-            $dadosAnime->nota = $request->a_nota;
+            $dadosAnime->nota = $request->nota;
     
             $dadosAnime->id_user = auth()->user()->id;
             $dadosAnime->save();

@@ -11,7 +11,7 @@ class filme extends Model
 {
     use HasFactory, HasUuid;
 
-    protected $guarded = [];
+    protected $guarded = ['id'];
 
-    protected $fillable = ['f_capa', 'f_genero', 'f_classificacao', 'f_finalizou', 'f_nota'];
+    protected $fillable = ['capa', 'genero', 'classificacao', 'finalizou', 'nota'];
 }

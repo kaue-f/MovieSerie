@@ -10,7 +10,7 @@
           <div>
             <label class="block text-sm font-semibold leading-6 text-gray-900">Titulo</label>
             <div class="mt-2.5">
-              <x-input type="text" placeholder="Titulo" name="a_titulo" id="a_titulo"/>
+              <x-input type="text" placeholder="Titulo" name="titulo" id="titulo"/>
             </div>
           </div>
 
@@ -19,7 +19,7 @@
           <div>
             <label class="block text-sm font-semibold leading-6 text-gray-900">Temporada</label>
             <div class="mt-2.5">
-                <x-input type="number" placeholder="Temporada" name="a_temporada" id="a_temporada" hint="Só números"/>
+                <x-input type="number" placeholder="Temporada" name="temporada" id="temporada" />
             </div>
           </div>
           
@@ -27,7 +27,7 @@
           <div>
             <label class="block text-sm font-semibold leading-6 text-gray-900">Episódio</label>
             <div class="mt-2.5">
-                <x-input type="number" placeholder="Quantidade de Episódio" name="a_episodio" id="a_episodio" hint="Só números"/>
+                <x-input type="number" placeholder="Quantidade de Episódio" name="episodio" id="episodio"/>
             </div>
           </div>
          </div>
@@ -35,7 +35,7 @@
           <div class="sm:col-span-2" style="margin-block: 0.8rem">
             <label class="block text-sm font-semibold leading-6 text-gray-900">Capa</label>
             <div class="mt-2.5">
-                <x-input name='a_capa' placeholder="URL da Imagem"/>
+                <x-input name='capa' placeholder="URL da Imagem"/>
             </div>
           </div>
 
@@ -44,7 +44,7 @@
             <label class="block text-sm font-semibold leading-6 text-gray-900">Gênero</label>
             <div class="mt-2.5">
                 <x-select
-                    name='a_genero'
+                    name='genero'
                     placeholder="Selecionar Gênero"
                     multiselect
                     :options="['Ação', 'Aventura', 'Comédia', 'Comédia romântica', 'Dança', 'Documentário', 'Drama', 'Faroeste', 'Fantasia', 'Ficção científica', 'Mistério', 'Musical', 'Romance', 'Terror']"
@@ -58,7 +58,7 @@
             <label class="block text-sm font-semibold leading-6 text-gray-900">Classificação</label>
             <div class="mt-2.5">
                 <x-select
-                    name='a_classificacao'
+                    name='classificacao'
                     placeholder="Selecionar Classificação"
                     :options="['L', '10', '12', '14', '16', '18']"
                     wire:model.defer="model"
@@ -70,7 +70,7 @@
           <div class="sm:col-span-2" style="margin-block: 0.8rem">
             <label class="block text-sm font-semibold leading-6 text-gray-900">Sinopse</label>
             <div class="mt-2.5">
-              <textarea name="a_sinopse" id="a_sinopse" rows="4" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+              <textarea name="sinopse" id="sinopse" rows="4" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
             </div>
           </div>
 
@@ -81,7 +81,7 @@
             <label class="block text-sm font-semibold leading-6 text-gray-900">Duração</label>
             <div class="mt-2.5">
                 <x-time-picker 
-                    name='a_duracao'
+                    name='duracao'
                     placeholder="Duração do Episódio"
                     format="24"
                     interval="1"
@@ -96,7 +96,7 @@
             <label class="block text-sm font-semibold leading-6 text-gray-900">Lançamento</label>
             <div class="mt-2.5">
                 <x-datetime-picker
-                    name='a_lancamento'
+                    name='lancamento'
                     without-time
                     display-format="YYYY-MM-DD"
                     placeholder="Data de Lançamento"
@@ -110,7 +110,7 @@
             <label class="block text-sm font-semibold leading-6 text-gray-900">Já Assistiu ?</label>
             <div class="mt-2.5">
               <x-select
-                name='a_assistiu'
+                name='assistiu'
                 placeholder="Selecionar Classificação"
                 :options="['Sim', 'Não', 'Assistindo']"
                 wire:model.defer="model"
@@ -123,7 +123,7 @@
             <label class="block text-sm font-semibold leading-6 text-gray-900">Avaliação</label>
             <div class="mt-2.5">
             <x-select
-                name='a_nota'
+                name='nota'
                 placeholder="Avalie"
                 :options="[
                     ['name' => '⭐',  'id' => '⭐', 'description' => 'Péssimo'],

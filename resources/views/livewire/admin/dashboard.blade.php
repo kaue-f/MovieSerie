@@ -10,7 +10,7 @@
             <div class="hover:scale-125 space-y-4 text-center">
                 <a href="{{route('catalogo.series')}}">
                     <img class="w-64 h-64 mx-auto object-cover rounded-xl md:w-72 md:h-96 lg:w-96 lg:h-[36rem]" 
-                        src="{{$capa->serie}}" width="640" height="805">
+                        src="{{$capa->serie}}" width="1000" height="667">
                 </a>
                 <div>
                     <h4 class="text-4xl text-black dark:text-white font-bold">Séries</h4>
