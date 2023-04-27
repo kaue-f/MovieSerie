@@ -9,8 +9,8 @@ class ListAnime extends Component
 {
     public function render()
     {   
-        $animes = anime::where('id_user', auth()->user()->id)->orderBy('titulo', 'ASC')->get();
+        $animes = anime::where('id_user', auth()->user()->id)->orderBy('titulo', 'ASC')->paginate(10);
 
-        return view('livewire.list-anime', compact('animes'));
+        return view('livewire.list-anime', compact('animes'), ['animes' => $animes]);
     }
 }

@@ -9,9 +9,9 @@ class ViewEditF extends Component
 {
     public function render()
     {   
-        $viewEfilme = filme::where('id_user', auth()->user()->id)->orderBy('titulo', 'ASC')->get();
+        $viewEfilme = filme::where('id_user', auth()->user()->id)->orderBy('titulo', 'ASC')->paginate(10);
 
-        return view('livewire.view-edit-f', compact('viewEfilme'));
+        return view('livewire.view-edit-f', compact('viewEfilme'),  ['viewEfilme' => $viewEfilme]);
     }
 
     public function deleteFilme(string | int $id){

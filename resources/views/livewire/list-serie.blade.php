@@ -4,7 +4,7 @@
             <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Catálogo de Séries</h2>
         </div> 
         
-        <div class="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2">
+        <div class="grid gap-8 mb-8 lg:mb-12 md:grid-cols-2">
          @foreach ($series as $serie )
             <div class="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">   
                 <!-- Capa -->
@@ -69,5 +69,6 @@
                 </div>
             </div> 
         @endforeach
+        {{ $series->links() }}
         </div>
 </div>

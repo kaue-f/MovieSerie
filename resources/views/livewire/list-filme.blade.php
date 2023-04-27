@@ -67,5 +67,8 @@
                 </div>
             </div> 
         @endforeach
+        <div>
+            {{ $filmes->links() }}
         </div>
+    </div>
 </div>

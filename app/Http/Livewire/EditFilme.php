@@ -31,6 +31,6 @@ class EditFilme extends Component
             'finalizou', 'nota'
         ]));
 
-        return redirect()->route('catalogo.filmes');
+        return redirect()->route('view.edit.filme');
     }
 }

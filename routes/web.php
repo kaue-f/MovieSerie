@@ -18,7 +18,9 @@ use App\Http\Livewire\Admin\Settings\Settings;
 use App\Http\Livewire\Admin\Users\EditUser;
 use App\Http\Livewire\Admin\Users\ShowUser;
 use App\Http\Livewire\Admin\Users\Users;
+use App\Http\Livewire\EditAnime;
 use App\Http\Livewire\EditFilme;
+use App\Http\Livewire\EditSerie;
 use App\Http\Livewire\ListAnime;
 use App\Http\Livewire\ListFilme;
 use App\Http\Livewire\ListSerie;
@@ -73,10 +75,17 @@ Route::prefix(config('admintw.prefix'))->middleware(['auth', 'verified', 'active
         Route::get('filme', ViewEditF::class)->name('view.edit.filme');
         Route::get('edit-filme/{id}', [EditFilme::class, 'editFilme'])->name('edit.filme');
         Route::post('update-filme/{id}', [EditFilme::class, 'updateFilme'])->name('update.filme');
-        Route::delete('delete/{id}', [ViewEditF::class, 'deleteFilme'])->name('delete.filme');
+        Route::delete('delete-filme/{id}', [ViewEditF::class, 'deleteFilme'])->name('delete.filme');
+
         Route::get('serie', ViewEditS::class)->name('view.edit.serie');
+        Route::get('edit-serie/{id}', [EditSerie::class, 'editSerie'])->name('edit.serie');
+        Route::post('update-serie/{id}', [EditSerie::class, 'updateSerie'])->name('update.serie');
+        Route::delete('delete-serie/{id}', [ViewEditS::class, 'deleteSerie'])->name('delete.serie');
 
         Route::get('anime', ViewEditA::class)->name('view.edit.anime');
+        Route::get('edit-anime/{id}', [EditAnime::class, 'editAnime'])->name('edit.anime');
+        Route::post('update-anime/{id}', [EditAnime::class, 'updateAnime'])->name('update.anime');
+        Route::delete('delete-anime/{id}', [ViewEditA::class, 'deleteAnime'])->name('delete.anime');
     });
 
     Route::get('2fa', [TwoFaController::class, 'index'])->name('2fa');

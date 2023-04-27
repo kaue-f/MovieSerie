@@ -69,5 +69,6 @@
                 </div>
             </div> 
         @endforeach
+        {{ $fanimes->links() }}
         </div>
 </div>

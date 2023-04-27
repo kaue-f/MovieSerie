@@ -3,7 +3,9 @@
 namespace App\Providers;
 
 use App\Models\Setting;
+use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Pagination\Paginator as PaginationPaginator;
 use Illuminate\Routing\UrlGenerator;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Schema;
@@ -29,6 +31,7 @@ class AppServiceProvider extends ServiceProvider
             $url->forceScheme('https');
         }
 
+        PaginationPaginator::useTailwind();
         Password::defaults(function () {
             return Password::min(8)
                 ->mixedCase()

@@ -42,7 +42,7 @@
                     name='genero'
                     placeholder="Selecionar Gênero"
                     multiselect
-                    :options="['Ação', 'Aventura', 'Comédia', 'Comédia romântica', 'Dança', 'Documentário', 'Drama', 'Faroeste', 'Fantasia', 'Ficção científica', 'Mistério', 'Musical', 'Romance', 'Terror']"
+                    :options="['Ação', 'Aventura', 'Animação', 'Baseado em fatos reais', 'Comédia', 'Comédia romântica', 'Dança', 'Documentário', 'Drama', 'Fantasia', 'Faroeste', 'Ficção científica', 'Guerra','Mistério', 'Musical', 'Romance', 'Suspense','Terror']"
                     value="{{$editfilme->genero}}"
                     />
             </div>

@@ -10,7 +10,7 @@
           <div>
             <label class="block text-sm font-semibold leading-6 text-gray-900">Titulo</label>
             <div class="mt-2.5">
-              <x-input type="text" placeholder="Titulo" name="titulo" id="titulo"/>
+              <x-input type="text" placeholder="Titulo" name="titulo" id="titulo" autocomplete="off"/>
             </div>
           </div>
 
@@ -18,7 +18,7 @@
           <div class="sm:col-span-2" style="margin-block: 0.8rem">
             <label class="block text-sm font-semibold leading-6 text-gray-900">Capa</label>
             <div class="mt-2.5">
-                <x-input name='capa' placeholder="URL da Imagem"/>
+                <x-input name='capa' placeholder="URL da Imagem" autocomplete="off"/>
             </div>
           </div>
 
@@ -27,10 +27,11 @@
             <label for="company" class="block text-sm font-semibold leading-6 text-gray-900">Gênero</label>
             <div class="mt-2.5">
                 <x-select
+                    autocomplete="off"
                     name='genero'
                     placeholder="Selecionar Gênero"
                     multiselect
-                    :options="['Ação', 'Aventura', 'Comédia', 'Comédia romântica', 'Dança', 'Documentário', 'Drama', 'Faroeste', 'Fantasia', 'Ficção científica', 'Mistério', 'Musical', 'Romance', 'Terror']"
+                    :options="['Ação', 'Aventura', 'Animação', 'Baseado em fatos reais', 'Comédia', 'Comédia romântica', 'Dança', 'Documentário', 'Drama', 'Fantasia', 'Faroeste', 'Ficção científica', 'Guerra','Mistério', 'Musical', 'Romance', 'Suspense','Terror']"
                     wire:model.defer="model"
                 />
             </div>
@@ -41,6 +42,7 @@
             <label for="email" class="block text-sm font-semibold leading-6 text-gray-900">Classificação</label>
             <div class="mt-2.5">
                 <x-select
+                    autocomplete="off"
                     name='classificacao'
                     placeholder="Selecionar Classificação"
                     :options="['L', '10', '12', '14', '16', '18']"
@@ -53,7 +55,7 @@
           <div class="sm:col-span-2" style="margin-block: 0.8rem">
             <label for="message" class="block text-sm font-semibold leading-6 text-gray-900">Sinopse</label>
             <div class="mt-2.5">
-              <textarea name="sinopse" id="sinopse" rows="4" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+              <textarea name="sinopse" id="sinopse" rows="4" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" autocomplete="off"></textarea>
             </div>
           </div>
 
@@ -63,6 +65,7 @@
               <label class="block text-sm font-semibold leading-6 text-gray-900">Duração</label>
               <div class="mt-2.5">
                   <x-time-picker 
+                      autocomplete="off"
                       name='duracao'
                       placeholder="Duração do Filme"
                       format="24"
@@ -78,6 +81,7 @@
               <label class="block text-sm font-semibold leading-6 text-gray-900">Lançamento</label>
               <div class="mt-2.5">
                   <x-datetime-picker
+                      autocomplete="off"
                       name='lancamento'
                       without-time
                       display-format="YYYY-MM-DD"
@@ -101,6 +105,7 @@
               <label class="block text-sm font-semibold leading-6 text-gray-900">Avaliação</label>
               <div class="mt-2.5">
               <x-select
+                  autocomplete="off"
                   name='nota'
                   placeholder="Avalie"
                   :options="[

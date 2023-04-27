@@ -4,11 +4,11 @@
          <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Editar de Filmes</h2>
      </div> 
      
-     <div class="grid gap-8 mb-8 lg:mb-12 md:grid-cols-3">
+     <div class="grid gap-8 mb-8 lg:mb-12 md:grid-cols-2">
         @foreach ($viewEfilme as $filme)
-         <div class="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">   
+         <div class="items-center w-[32rem] bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">   
              <!-- Capa -->
-                 <img class="h-[16rem] w-[10rem] " src="{{$filme->capa}}">
+                 <img class="h-[16rem] w-[14rem] " src="{{$filme->capa}}">
 
              <div class="p-4">
                  <!-- Titulo -->
@@ -49,16 +49,33 @@
                              {{$filme->nota}}
                      </li>
                  </ul>
-                <div class="space-y-1" >
+                <div class="space-x-14" >
                     <a href="{{route('edit.filme', $filme->id)}}"><i class="fa-solid fa-pen text-lg"></i></a>
+
+                    <label for="my-modal"><i class="fa-solid fa-trash text-lg cursor-pointer"></i></label>
+
+                    <input type="checkbox" id="my-modal" class="modal-toggle" />
+                    <div class="modal">
+                    <div class="modal-box">
+                    <h3 class="font-bold text-lg">Excluir</h3>
+                    <p class="py-4"> Deseja excluir permanentemente {{$filme->titulo}}?</p>
+                    <div class="modal-action">
+                    
+                        <label for="my-modal" class="btn">Ops, Me Enganei</label>
+
                     <form action="{{route('delete.filme', $filme->id)}}" method="post">
-                    @csrf
-                    @method('DELETE')
-                       <button type="submit"><i class="fa-solid fa-trash text-lg"></i></button>
+                        @csrf
+                        @method('DELETE')
+                        <button for="my-modal" class="btn" type="submit">Tenho Certeza!</button>
                     </form>
+                    </div>
+                    </div>
+                    </div>
+
                 </div>
              </div>
          </div> 
      @endforeach
+     {{ $viewEfilme->links() }}
      </div>
 </div>

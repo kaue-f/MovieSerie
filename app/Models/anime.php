@@ -11,5 +11,7 @@ class anime extends Model
 {
     use HasFactory, HasUuid;
 
-    protected $guarded = [];
+    protected $guarded = ['id'];
+
+    protected $fillable = ['temporada', 'episodio', 'capa', 'genero', 'classificacao', 'finalizou', 'nota'];
 }
