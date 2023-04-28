@@ -60,7 +60,13 @@
                     name='genero'
                     placeholder="Selecionar Gênero"
                     multiselect
-                    :options="['Ação', 'Aventura', 'Comédia', 'Comédia romântica', 'Dança', 'Drama', 'Fantasia', 'Ficção científica', 'Guerra', 'Mistério', 'Musical', 'Romance', 'Suspense', 'Terror']"
+                    :options="[
+                      'Ação', 'Artes marciais', 'Aventura', 'Bishōnen', 'Bishoujo', 'Comédia', 'Demônios','Drama', 'Ecchi', 
+                      'Esporte', 'Fantasia', 'Gore', 'Guerra', 'Harem', 'Histórico', 'Isekai', 'Jogos', 'Josei', 'Kodomo', 
+                      'Mahou Shoujo', 'Mecha', 'Mistério', 'Musical', 'Paródia', 'Policial', 'Pós-Apocalíptico', 'Psicológico', 
+                      'Sci-Fi', 'Seinen', 'Shōjo', 'Shoujo-ai', 'Shounen', 'Shounen-ai', 'Slice-of-life', 
+                      'Sobrenatural', 'Superpoderes', 'Terror', 'Vida Escolar'
+                    ]"
                     value="{{{$editanime->genero}}}"
                 />
             </div>
