@@ -88,18 +88,6 @@ Route::prefix(config('admintw.prefix'))->middleware(['auth', 'verified', 'active
         Route::delete('delete-anime/{id}', [ViewEditA::class, 'deleteAnime'])->name('delete.anime');
     });
 
-    Route::get('2fa', [TwoFaController::class, 'index'])->name('2fa');
-    Route::post('2fa', [TwoFaController::class, 'update'])->name('2fa.update');
-    Route::get('2fa-setup', [TwoFaController::class, 'setup'])->name('2fa-setup');
-    Route::post('2fa-setup', [TwoFaController::class, 'setupUpdate'])->name('2fa-setup.update');
-
-    Route::prefix('settings')->group(function () {
-        Route::get('audit-trails', AuditTrails::class)->name('admin.settings.audit-trails.index');
-        Route::get('system-settings', Settings::class)->name('admin.settings');
-        Route::get('roles', Roles::class)->name('admin.settings.roles.index');
-        Route::get('roles/{role}/edit', Edit::class)->name('admin.settings.roles.edit');
-    });
-
     Route::prefix('users')->group(function () {
         Route::get('/', Users::class)->name('admin.users.index');
         Route::get('{user}/edit', EditUser::class)->name('admin.users.edit');

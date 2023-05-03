@@ -7,9 +7,9 @@
 
     <livewire:admin.users.edit.profile :user="$user"/>
     <livewire:admin.users.edit.change-password :user="$user"/>
-    <livewire:admin.users.edit.two-factor-authentication :user="$user"/>
+    {{--<livewire:admin.users.edit.two-factor-authentication :user="$user"/>
     @can('edit_roles')
         <livewire:admin.users.edit.admin-settings :user="$user"/>
         <livewire:admin.users.edit.roles :user="$user"/>
-    @endcan
+    @endcan--}}
 </div>

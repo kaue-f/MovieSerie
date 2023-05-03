@@ -37,7 +37,7 @@
                 @auth
                     <div class="flex justify-between mb-5 bg-white dark:bg-gray-700 border-b-4 border-primary px-2 py-2">
 
-                        <div class="flex">
+                       {{-- <div class="flex">
                             <button @click.stop="sidebarOpen = !sidebarOpen" class="md:hidden focus:outline-none pl-1 pr-2">
                                 <svg class="w-6 transition ease-in-out duration-150 text-gray-900 dark:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"/>
@@ -47,10 +47,10 @@
                             <livewire:admin.search />
 
                         </div>
-
+                       --}}
                         <div class="flex">
-                            <livewire:admin.notifications-menu />
-                            <livewire:admin.help-menu />
+                           {{-- <livewire:admin.notifications-menu />
+                            <livewire:admin.help-menu />--}}
                             <livewire:admin.users.user-menu />
                         </div>
                     </div>
