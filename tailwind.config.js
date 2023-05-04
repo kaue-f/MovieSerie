@@ -33,9 +33,12 @@ module.exports = {
             colors: {
                 primary: '#2563eb',
                 secondary: '#0a0a0a',
+                'primary-500': '#222',
+                'primary-600': '#222',
             },
             textColors: {
-                primary: '#5a67d8'
+                primary: '#5a67d8',
+                
             },
         },
     },
